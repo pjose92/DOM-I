@@ -41,25 +41,53 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-let headerImg = document.getElementById("cta-img");
-headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
+//nav links here
+let aTags = document.querySelectorAll('a')
 
-let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+aTags[0].setAttribute('class', '.nav-item-1')
+aTags[0].innerText = "Service"
+aTags[1].setAttribute('class', '.nav-item-2')
+aTags[1].innerText = "Product"
+aTags[2].setAttribute('class', '.nav-item-3')
+aTags[2].innerText = "Vision"
+aTags[3].setAttribute('class', '.nav-item-4')
+aTags[3].innerText = "Features"
+aTags[4].setAttribute('class', '.nav-item-5')
+aTags[4].innerText = "About"
+aTags[5].setAttribute('class', '.nav-item-6')
+aTags[5].innerText = "Product"
 
-let h1 = document.querySelector("h1");
-h1.textContent = siteContent["cta"]["h1"];
-
-let button = document.querySelector("button");
-button.textContent = siteContent["cta"]["button"];
 
 
+//main header section
+let mainHeading = document.querySelector('h1')
+mainHeading.textContent = siteContent['cta']['h1']
 
-let h4 = document.querySelectorAll("h4");
-h4[0].textContent = siteContent["main-content"]["features-h4"];
-h4[1].textContent = siteContent["main-content"]["about-h4"];
-h4[2].textContent = siteContent["main-content"]["services-h4"];
-h4[3].textContent = siteContent["main-content"]["product-h4"];
-h4[4].textContent = siteContent["main-content"]["vision-h4"];
-h4[5].textContent = siteContent["contact"]["contact-h4"];
+// get started button text 
+let mainButton = document.querySelector('button')
+mainButton.innerText = "Get Started"
 
+// banner image
+let logo2 = document.querySelector("#cta-img")
+logo2.setAttribute('src', siteContent["cta"]["img-src"])
+
+
+// middle imaege 
+let logo3= document.querySelector("#middle-img")
+logo3.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+//contact 
+
+let contactInfo = document.querySelector('.contact')
+
+contactInfo.getElementsByTagName('h4')[0].textContent = siteContent["contact"]["contact-h4"]
+contactInfo.getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"]
+contactInfo.getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"]
+contactInfo.getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"]
+
+//footer
+
+let footer = document.querySelector('footer')
+
+footer.innerText = "Copyright Great Idea! 2018"
