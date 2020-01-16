@@ -55,9 +55,25 @@ aTags[3].innerText = "Features"
 aTags[4].setAttribute('class', '.nav-item-5')
 aTags[4].innerText = "About"
 aTags[5].setAttribute('class', '.nav-item-6')
-aTags[5].innerText = "Product"
+aTags[5].innerText = "Contact"
 
+// gets all the links to turn green
+aTags.forEach(link => link.style.color ='green')
 
+//added two nav items 
+const newATag1 = document.createElement('a')
+const mainNav = document.querySelector('nav')
+newATag1.innerText = 'Tickets'
+newATag1.href = '#'
+mainNav.prepend(newATag1)
+newATag1.style.color = 'green'
+
+const newATag2 = document.createElement('a')
+const mainNav2 = document.querySelector('nav')
+newATag2.innerText = 'Reviews'
+newATag2.href = '#'
+mainNav2.append(newATag2)
+newATag2.style.color = 'green'
 
 //main header section
 let mainHeading = document.querySelector('h1')
@@ -71,14 +87,25 @@ mainButton.innerText = "Get Started"
 let logo2 = document.querySelector("#cta-img")
 logo2.setAttribute('src', siteContent["cta"]["img-src"])
 
+//main-content
+let mainContent = document.querySelectorAll('.text-content')
 
-// middle imaege 
+mainContent[0].querySelector('h4').textContent = siteContent['main-content']['features-h4']
+mainContent[0].querySelector('p').textContent = siteContent['main-content']['features-content']
+mainContent[1].querySelector('h4').textContent = siteContent['main-content']['about-h4']
+mainContent[1].querySelector('p').textContent = siteContent['main-content']['about-content']
+mainContent[2].querySelector('h4').textContent = siteContent['main-content']['services-h4']
+mainContent[2].querySelector('p').textContent = siteContent['main-content']['services-content']
+mainContent[3].querySelector('h4').textContent = siteContent['main-content']['product-h4']
+mainContent[3].querySelector('p').textContent = siteContent['main-content']['product-content']
+mainContent[4].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
+mainContent[4].querySelector('p').textContent = siteContent['main-content']['vision-content']
+
+// middle image  
 let logo3= document.querySelector("#middle-img")
 logo3.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
-
-//contact 
-
+//contact  informaion here
 let contactInfo = document.querySelector('.contact')
 
 contactInfo.getElementsByTagName('h4')[0].textContent = siteContent["contact"]["contact-h4"]
@@ -87,7 +114,5 @@ contactInfo.getElementsByTagName('p')[1].textContent = siteContent["contact"]["p
 contactInfo.getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"]
 
 //footer
-
 let footer = document.querySelector('footer')
-
 footer.innerText = "Copyright Great Idea! 2018"
